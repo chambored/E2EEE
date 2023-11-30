@@ -1,0 +1,63 @@
+<!--
+  author: Nick Trimmer
+  date: 11/26/2023
+  page: Home Page for E2EEE
+  assignment: CP4
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>End to End Encrypted Editor</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/index.js"></script>
+    </head>
+
+    <body class="mt-4">
+        <div id="alert-area" class="container pt-2">
+            <p class="mb-2">Data Persistence: The current implementation stores documents in memory, which means all saved documents will be lost when the server restarts.</p>
+            <button id="dismiss-alert" class="btn btn-primary">Dismiss</button>
+        </div>
+
+        <div class = "p-2">
+            <div id="wrapper" class="container">
+                <header class="container col-lg">
+                    <div id="lock-box">
+                        <svg id="unlock" class="lock" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                        <svg id="lock" class="lock" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                    </div>
+                    <h1 class="text-center">Encrypted Editor</h1>
+                </header>
+
+                <main class="container col-lg mb-2">
+                    <section id="editor" class="row mb-1">
+                        <label for="document-name">Document Name</label><input type="text" id="document-name" placeholder="Enter document name">
+                        <label for="document-content">Document</label><textarea id="document-content" placeholder="Write your document here..." rows="10" class="mb-1"></textarea>
+                        <label for="passkey">Passkey for Storage</label><input type="text" id="passkey" placeholder="Enter encryption passkey">
+                        <div class="button-group container mt-1">
+                            <button id="encrypt-button" class="btn btn-primary mb-1">Encrypt</button>
+                            <button id="decrypt-button" class="btn btn-primary mb-1">Decrypt</button>
+                            <button id="save-button" class="btn btn-secondary mb-1">Save Document</button>
+                            <button id="load-button" class="btn btn-secondary mb-1">Load Document</button>
+                        </div>
+                    </section>
+
+                    <section id="educator" class="row p-2">
+                        <h2 class="text-center">How it Works</h2>
+                        <p id="info-text">This document editor encrypts your text before sending it to the server. Here's a brief overview of how the encryption works...</p>
+                        <p id="educational-text"></p>
+                    </section>
+                </main>
+
+                <footer class="container col-lg">
+                    <p class="text-center">&copy; 2023 E2EEE. All rights reserved.</p>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>

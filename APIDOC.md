@@ -1,47 +1,45 @@
-# *FILL IN NAME* API Documentation
-*Fill in a short description here about the API's purpose.*
+# E2EEE API Documentation
+The E2EEE API provides endpoints for retrieving encrypted documents and saving encrypted documents.
 
-## *Fill in Endpoint 1 Title*
-**Request Format:** *Fill in example request format*
+## Save Encrypted Document
+- Request Format: JSON Object with name and content fields
+- Request Type: POST
+- Returned Data Format: Plain Text
+- Description: This endpoint allows users to save an encrypted document. It requires a JSON object containing a unique name identifier for the document and the content which is the encrypted data.
 
-**Request Type:** *Fill in request type*
-
-**Returned Data Format**: Plain Text
-
-**Description:** *Fill in description*
-
-
-**Example Request:** *Fill in example request*
-
-**Example Response:**
-*Fill in example response in the ticks*
-
-```
-
-```
-
-**Error Handling:**
-*Fill in an example of the error handling*
-
-## *Fill in Endpoint 2 Title*
-**Request Format:** *Fill in example request format*
-
-**Request Type:** *Fill in request type*
-
-**Returned Data Format**: JSON
-
-**Description:** *Fill in description*
-
-**Example Request:** *Fill in example request*
-
-**Example Response:**
-*Fill in example response in the {}*
+### Example Request:
 
 ```json
 {
-
+"name": "Document1",
+"content": "EncryptedDataHere"
 }
 ```
+### Example Response:
+```text
+Document saved successfully
+```
+### Error Handling:
 
-**Error Handling:**
-*Fill in an example of the error handling*
+- If name or content is missing: Returns 400 with message 'Missing name or content'
+- If the document with the same name already exists: Returns 409 with message 'Document already exists'
+
+## Load Encrypted Document
+- Request Format: Path Variable name in URL
+- Request Type: GET
+- Returned Data Format: JSON
+- Description: This endpoint is used to load an encrypted document. It requires the document's name as a path variable in the URL. It returns the encrypted content of the document in JSON format.
+
+### Example Request: 
+```http request
+GET /load/Document1
+```
+### Example Response:
+
+```json
+{
+"content": "EncryptedDataHere"
+}
+```
+### Error Handling:
+- If the document with the specified name does not exist: Returns 404 with message 'Document not found'

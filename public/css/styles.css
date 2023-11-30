@@ -1,0 +1,229 @@
+/*
+  author: Nick Trimmer
+  date: 11/26/2023
+  page: styles page for CP4 in AD320, detailing the css styles for e2eee
+ */
+
+/* Base Styles */
+:root {
+    --primary-color: #DA702C;
+    --secondary-color: #100F0F;
+    --tertiary-color: #D0A215;
+    --background-color: #FFFCF0;
+    --alert-color: #D14D41;
+    --display-font-family: 'Bagel';
+    --text-font-family: 'Lib';
+    --font-size: 16px;
+    --line-height: 1.5;
+}
+
+body {
+    font-family: var(--text-font-family);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--secondary-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23205ea6' fill-opacity='0.6' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+#alert-area {
+    background-color: var(--alert-color);
+    color: var(--background-color);
+    text-align: center;
+    position: fixed;
+    top: 0;
+}
+
+#lock-box {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.lock {
+    width: 3.5rem;
+}
+
+#lock {
+    display: none;
+}
+
+#educator {
+    border: 2px solid var(--primary-color);
+    border-radius: 0.25rem;
+}
+
+/* Responsive Grid System */
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+}
+
+@media (min-width: 576px) {
+    .col-sm {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .col-md {
+        flex: 0 0 auto;
+        width: 33.33333%;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+}
+
+/* Typography */
+@font-face {
+    font-family: 'Bagel';
+    src: url('fonts/BagelFatOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lib';
+    src: url('fonts/liberation-mono.regular.ttf') format('truetype');
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-family: var(--display-font-family);
+    font-size: 3.4rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+footer {
+    font-size: 0.875rem;
+}
+
+/* Form Styles */
+input,
+button,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--secondary-color);
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+label {
+    font-size: 1.25rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: var(--tertiary-color);
+}
+
+.btn:hover {
+    background-color: #AF3029;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 3rem; }
+
+.pt-1 { padding-top: 0.25rem; }
+.pt-2 { padding-top: 0.5rem; }
+.pt-3 { padding-top: 1rem; }
+.pt-4 { padding-top: 1.5rem; }
+.pt-5 { padding-top: 3rem; }
+
+.pb-1 { padding-bottom: 0.25rem; }
+.pb-2 { padding-bottom: 0.5rem; }
+.pb-3 { padding-bottom: 1rem; }
+.pb-4 { padding-bottom: 1.5rem; }
+.pb-5 { padding-bottom: 3rem; }
+
+.pl-1 { padding-left: 0.25rem; }
+.pl-2 { padding-left: 0.5rem; }
+.pl-3 { padding-left: 1rem; }
+.pl-4 { padding-left: 1.5rem; }
+.pl-5 { padding-left: 3rem; }
+
+.pr-1 { padding-right: 0.25rem; }
+.pr-2 { padding-right: 0.5rem; }
+.pr-3 { padding-right: 1rem; }
+.pr-4 { padding-right: 1.5rem; }
+.pr-5 { padding-right: 3rem; }
+
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 1rem; }
+.p-4 { padding: 1.5rem; }
+.p-5 { padding: 3rem; }

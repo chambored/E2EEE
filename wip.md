@@ -1,0 +1,11 @@
+- Validation: Ensure that the document names are unique. You might need to handle cases where a user tries to save a new document with a name that already exists.
+- Security: Be cautious about how document names are handled. Ensure they are properly sanitized to prevent any kind of injection attacks.
+- Security: Ensure the passkey is handled securely and not exposed inappropriately.
+- Error Handling: Implement robust error handling for scenarios like network errors, server-side issues, or decryption errors.
+- Decryption Logic: The decrypt function should be implemented to correctly decrypt the content using the provided passkey.
+- User Experience: The user should be aware that if they lose their passkey, they won’t be able to decrypt their documents, as the key used for encryption/decryption is derived from this passkey and not stored anywhere else.
+- REMOVE ALL ALERTS: The alerts are only for demonstration purposes and should be removed before submitting the solution.
+- REMOVE ALL CONSOLE LOGS: The console logs are only for demonstration purposes and should be removed before submitting the solution.
+- Data Persistence: The current implementation stores documents in memory, which means all saved documents will be lost when the server restarts. For a production application, 
+- if document is loaded and attempted to resaved, error pops up indicating the document already exists
+- consider using a database for persistent storage.
